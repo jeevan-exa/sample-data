@@ -1,0 +1,39 @@
+{
+    "name": "PRICES PRICE_SOURCE_REF CHECK",
+    "description": "used one table ",
+    "tag": [
+        "Single_Table_Single_Column_2_PRICES"
+    ],
+    "case_identifier": 1,
+    "data_details": [
+        {
+            "dataconnection": "sqldatabase1",
+            "data_connectivity_type": "mssql",
+            "table_name": "PRICES",
+            "data_name": "data4"
+        }
+    ],
+    "filter": {
+        "filter_condition": "and",
+        "filter_rules": [
+            {
+                "field": "data4.PRICE_SOURCE_REF",
+                "operator": "not_null",
+                "value": null
+            }
+        ]
+    },
+    "checks": {
+        "check_condition": "and",
+        "check_rules": [
+            {
+                "field": "data4.PRICE_SOURCE_REF",
+                "check": "contains",
+                "value": [
+                    "USER",
+                    "US"
+                ]
+            }
+        ]
+    }
+}
